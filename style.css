@@ -1,166 +1,237 @@
+/* RESET DASAR */
 body {
-margin:0;
-font-family:Arial, sans-serif;
 
-background:url("stars.jpg");
-background-size:cover;
+margin: 0;
+padding: 0;
 
-overflow-x:hidden;
-}
+height: 100vh;
 
-/* Fade page */
-.fade{
-animation:fadeIn 1s ease;
-}
+display: flex;
+flex-direction: column;
 
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
-}
+align-items: center;
 
-/* Judul coklat */
-.title{
-color:brown;
-font-size:40px;
-text-align:center;
-margin-top:20px;
+background: url("bg-stars.jpg");
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
 
-animation:glow 2s infinite alternate;
-}
+font-family: 'Segoe UI', sans-serif;
 
-@keyframes glow{
-from{opacity:0.6;}
-to{opacity:1;}
-}
+color: white;
 
-/* Tulisan berjalan */
-.marquee{
-color:lightblue;
-font-size:24px;
-
-overflow:hidden;
-white-space:nowrap;
-}
-
-.marquee span{
-display:inline-block;
-padding-left:100%;
-
-animation:scroll 12s linear infinite;
-}
-
-@keyframes scroll{
-from{transform:translateX(0);}
-to{transform:translateX(-100%);}
-}
-
-/* Foto merah */
-.photo-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(2,1fr);
-
-gap:10px;
-
-padding:20px;
+overflow-x: hidden;
 
 }
 
-.photo-grid img{
 
-width:100%;
+/* JUDUL */
+.title {
 
-height:140px;
+font-size: 28px;
 
-object-fit:cover;
+color: #8B4513;
 
-border-radius:12px;
+margin-top: 15px;
 
-animation:zoom 3s infinite alternate;
+text-align: center;
 
-}
-
-@keyframes zoom{
-from{transform:scale(1);}
-to{transform:scale(1.06);}
-}
-
-/* Teks hijau */
-.text-green{
-
-color:lightgreen;
-
-text-align:center;
-
-font-size:20px;
-
-padding:10px;
-
-animation:fadeText 3s infinite alternate;
+animation: glow 2s infinite alternate;
 
 }
 
-@keyframes fadeText{
-from{opacity:0.5;}
-to{opacity:1;}
+@keyframes glow {
+
+from {
+text-shadow: 0 0 5px #fff;
 }
 
-/* Saturn biru tua */
-.saturn{
-
-width:120px;
-
-display:block;
-
-margin:20px auto;
-
-animation:float 4s infinite alternate;
+to {
+text-shadow: 0 0 15px #fff;
+}
 
 }
 
-@keyframes float{
-from{transform:translateY(0);}
-to{transform:translateY(-18px);}
-}
 
-/* tombol hitam */
-.nav-btn{
+/* MARQUEE TEXT */
+.marquee {
 
-position:fixed;
+width: 100%;
 
-bottom:20px;
+overflow: hidden;
 
-font-size:32px;
+white-space: nowrap;
 
-color:black;
-
-text-decoration:none;
-
-font-weight:bold;
+margin-top: 5px;
 
 }
 
-.left{ left:20px; }
+.marquee span {
 
-.right{ right:20px; }
+display: inline-block;
 
-/* LINK PAGE 4 */
-.link-btn{
+animation: slideText 10s linear infinite;
 
-display:block;
-
-text-align:center;
-
-margin-top:40px;
-
-font-size:28px;
-
-color:lightgreen;
-
-text-decoration:none;
-
-animation:fadeText 3s infinite alternate;
+font-size: 16px;
 
 }
+
+@keyframes slideText {
+
+from {
+transform: translateX(100%);
+}
+
+to {
+transform: translateX(-100%);
+}
+
+}
+
+
+/* FOTO GRID */
+.photo-grid {
+
+display: grid;
+
+grid-template-columns: 1fr 1fr;
+
+gap: 10px;
+
+width: 90%;
+
+max-width: 500px;
+
+margin-top: 15px;
+
+}
+
+.photo-grid img {
+
+width: 100%;
+
+height: 130px;
+
+object-fit: cover;
+
+border-radius: 12px;
+
+animation: zoomIn 6s infinite alternate;
+
+}
+
+@keyframes zoomIn {
+
+from {
+transform: scale(1);
+}
+
+to {
+transform: scale(1.05);
+}
+
+}
+
+
+/* TEKS ROMANTIS */
+.text-green {
+
+color: #7CFC00;
+
+text-align: center;
+
+padding: 15px;
+
+font-size: 15px;
+
+line-height: 1.6;
+
+max-width: 90%;
+
+animation: fadeIn 2s;
+
+}
+
+@keyframes fadeIn {
+
+from {
+opacity: 0;
+}
+
+to {
+opacity: 1;
+}
+
+}
+
+
+/* PLANET SATURN */
+.saturn {
+
+width: 80px;
+
+margin-top: 10px;
+
+animation: floatPlanet 3s infinite alternate;
+
+}
+
+@keyframes floatPlanet {
+
+from {
+transform: translateY(0);
+}
+
+to {
+transform: translateY(-15px);
+}
+
+}
+
+
+/* TOMBOL NAVIGASI */
+.nav-btn {
+
+position: fixed;
+
+bottom: 20px;
+
+font-size: 28px;
+
+text-decoration: none;
+
+color: white;
+
+}
+
+.nav-btn.right {
+
+right: 20px;
+
+}
+
+.nav-btn.left {
+
+left: 20px;
+
+}
+
+
+/* EFEK FADE PAGE */
+.fade {
+
+animation: fadePage 1s;
+
+}
+
+@keyframes fadePage {
+
+from {
+opacity: 0;
+}
+
+to {
+opacity: 1;
+}
+
+}2
